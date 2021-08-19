@@ -331,7 +331,7 @@ const DrawerWrapper: React.FC<DrawerProps> = React.forwardRef<DrawerRef, DrawerP
     const prefixCls = getPrefixCls('drawer', customizePrefixCls);
     const getContainer =
       // 有可能为 false，所以不能直接判断
-      customizeGetContainer === undefined && getPopupContainer
+      !!customizeGetContainer && getPopupContainer
         ? () => getPopupContainer(document.body)
         : customizeGetContainer;
 
